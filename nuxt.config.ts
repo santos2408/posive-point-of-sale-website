@@ -5,9 +5,9 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  vite: { plugins: tailwindcss() },
+  vite: { plugins: [tailwindcss()] },
 
-  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxtjs/tailwindcss", "@vueuse/nuxt", "nuxt-lucide-icons", "@nuxtjs/google-fonts"],
+  modules: ["@nuxt/eslint", "@nuxt/image", "@vueuse/nuxt", "nuxt-lucide-icons", "@nuxtjs/google-fonts"],
 
   ssr: true,
   nitro: {
