@@ -1,0 +1,3 @@
+.primary {
+  @apply text-brand-white bg-brand-primary-500 hover:bg-brand-primary-600;
+}

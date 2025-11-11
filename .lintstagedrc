@@ -1,1 +1,1 @@
-{ "*.{js,ts,vue}": ["eslint ./src --fix", "prettier --write"] }
+{ "*.{js,ts,vue}": ["eslint ./app/src --fix", "prettier --write"] }
