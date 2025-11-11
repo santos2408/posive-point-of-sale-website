@@ -1,4 +1,13 @@
 {
+  "files.autoSave": "onFocusChange",
+  "css.lint.unknownAtRules": "ignore",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "emmet.triggerExpansionOnTab": true,
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
@@ -6,5 +15,6 @@
     "**/.git/**": true,
     "**/node_modules/**": true,
     "**/.vscode/**": true
-  }
+  },
+
 }
