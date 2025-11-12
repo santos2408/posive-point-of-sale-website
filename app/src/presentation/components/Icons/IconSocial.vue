@@ -1,11 +1,5 @@
 <script setup lang="ts">
-enum Socials {
-  WHATSAPP = "whatsapp",
-  INSTAGRAM = "instagram",
-  FACEBOOK = "facebook",
-  YOUTUBE = "youtube",
-  LINKEDIN = "linkedin",
-}
+import { Socials } from "../types/enums";
 
 defineOptions({
   inheritAttrs: false,
@@ -13,7 +7,7 @@ defineOptions({
 
 const props = defineProps<{
   icon: Socials;
-  colored: boolean;
+  colored?: boolean;
 }>();
 </script>
 
