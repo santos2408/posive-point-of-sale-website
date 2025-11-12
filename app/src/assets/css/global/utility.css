@@ -2,3 +2,7 @@
   margin-inline: auto;
   /* padding-inline: 1rem; */
 }
+
+@utility custom-transition {
+  transition: all 0.2s ease;
+}
