@@ -1,39 +1,61 @@
 // @ts-check
 import eslintPluginImport from "eslint-plugin-import";
 import eslintPluginPrettier from "eslint-plugin-prettier";
-import eslintPluginVue from "eslint-plugin-vue";
-import withNuxt from "./.nuxt/eslint.config.mjs";
+import websiteConfig from "./frontend/apps/website/eslint.config.mjs";
 
-export default withNuxt({
-  plugins: { eslintPluginVue, eslintPluginImport, eslintPluginPrettier },
-  rules: {
-    // Geral
-    "no-console": "warn",
-    "no-debugger": "error",
-    "prefer-const": "warn",
-
-    // Importações
-    "import/order": [
-      "warn",
-      {
-        groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
-        // alphabetize: { order: "asc", caseInsensitive: true },
-      },
-    ],
-
-    // Vue
-    "vue/multi-word-component-names": "off",
-    "vue/no-unused-vars": "warn",
-    "vue/no-mutating-props": "error",
-    "vue/html-self-closing": "off",
-
-    // Prettier (opcional se usa Prettier)
-    "eslintPluginPrettier/prettier": [
-      "warn",
-      {
-        singleQuote: false,
-        semi: true,
-      },
-    ],
+export default [
+  // ================================
+  //          GLOBAL IGNORES
+  // ================================
+  {
+    ignores: ["**/node_modules/**", "**/.nuxt/**", "**/dist/**", "frontend/apps/website/public/scripts/*"],
   },
-});
+
+  // ================================
+  //          GLOBAL RULES
+  // ================================
+  {
+    plugins: {
+      prettier: eslintPluginPrettier,
+    },
+
+    rules: {
+      // General
+      "no-console": "warn",
+      "no-debugger": "error",
+      "prefer-const": "warn",
+
+      // Prettier (optional if using Prettier)
+      "prettier/prettier": [
+        "warn",
+        {
+          singleQuote: false,
+          semi: true,
+        },
+      ],
+    },
+  },
+
+  // ==================================================
+  //        IMPORT RULES (FORA DO NUXT)
+  // ==================================================
+  {
+    files: [""],
+    plugins: {
+      import: eslintPluginImport,
+    },
+    rules: {
+      "import/order": ["warn", { groups: ["builtin", "external", "internal", "parent", "sibling", "index"] }],
+      "import/no-cycle": "error",
+      "import/no-unresolved": "error",
+    },
+  },
+
+  // ================================
+  //         WEBSITE (NUXT.JS)
+  // ================================
+  ...(await websiteConfig.toConfigs()).map((config) => ({
+    ...config,
+    files: ["frontend/apps/website/**/*"],
+  })),
+];

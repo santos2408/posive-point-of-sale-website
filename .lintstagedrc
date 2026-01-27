@@ -1,1 +1,1 @@
-{ "*.{js,ts,vue}": ["eslint ./app/src --fix", "prettier --write"] }
+{ "frontend/**/*.{js,ts,vue}": ["eslint --fix --cache --quiet --color", "prettier --write"] }

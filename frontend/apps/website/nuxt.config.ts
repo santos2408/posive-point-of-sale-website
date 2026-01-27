@@ -1,4 +1,4 @@
-import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -6,26 +6,18 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   vite: { plugins: [tailwindcss()] },
-
+  css: ["@/assets/css/index.css"],
   modules: ["@nuxt/eslint", "@nuxt/image", "@vueuse/nuxt", "nuxt-lucide-icons", "@nuxtjs/google-fonts"],
-
   ssr: true,
+  image: { provider: "ipx" },
   nitro: {
     preset: "static",
-    prerender: {
-      routes: ["/"],
-    },
+    prerender: { routes: ["/"] },
   },
-
-  image: {
-    provider: "ipx",
-  },
-
   alias: {
-    "@": resolve(__dirname, "app/src"),
-    "~": resolve(__dirname, "app/src"),
+    "@": fileURLToPath(new URL("./app/src", import.meta.url)),
+    "~": fileURLToPath(new URL("./app/src", import.meta.url)),
   },
-
   dir: {
     pages: "src/presentation/pages",
     layouts: "src/presentation/layouts",
@@ -33,8 +25,6 @@ export default defineNuxtConfig({
     assets: "src/assets",
     plugins: "src/plugins",
   },
-
-  css: ["@/assets/css/index.css"],
   googleFonts: {
     families: {
       Manrope: { wght: [400, 500, 700] },
