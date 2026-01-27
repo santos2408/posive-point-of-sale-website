@@ -3,8 +3,9 @@ import type { States } from "../types/header";
 import { MENU_ITEMS } from "../constants/menu-items";
 import MenuDesktop from "../components/MenuDesktop/MenuDesktop.vue";
 import MenuMobile from "@/presentation/modules/header/components/MenuMobile/MenuMobile.vue";
+import ActionButton from "@/presentation/components/ActionButton/components/ActionButton.vue";
 
-// variables
+// states
 const states = reactive<States>({ visible: false });
 
 // composables
@@ -61,19 +62,23 @@ watch(width, () => {
   <header ref="header" class="border-brand-neutral-200 fixed z-10 w-full border-b bg-white transition" :style="headerStyles">
     <div class="px-6 py-5 transition-all duration-300 sm:container xl:py-7" :style="navStyles">
       <div class="flex flex-wrap items-center justify-between">
-        <div class="flex items-center gap-14">
-          <a href="#" aria-label="Posive logo">
-            <ClientOnly>
-              <img src="/images/global/posive-logo.svg" data-inject-svg class="h-7 w-auto xl:h-9" />
-            </ClientOnly>
-          </a>
+        <div class="flex justify-between xl:w-full">
+          <div class="flex items-center gap-14">
+            <a href="#" aria-label="Posive logo">
+              <ClientOnly>
+                <img src="/images/global/posive-logo.svg" data-inject-svg class="h-7 w-auto xl:h-9" />
+              </ClientOnly>
+            </a>
 
-          <!--============= MENU DESKTOP =============-->
-          <MenuDesktop class="hidden xl:flex xl:justify-self-end" :items="MENU_ITEMS" />
+            <!--============= MENU DESKTOP =============-->
+            <MenuDesktop class="hidden xl:flex xl:justify-self-end" :items="MENU_ITEMS" />
+          </div>
+
+          <ActionButton label="Get Started" class="max-xl:hidden" />
         </div>
 
-        <div class="flex gap-4">
-          <div class="flex items-center gap-4 xl:hidden">
+        <div class="flex gap-4 xl:hidden">
+          <div class="flex items-center gap-4">
             <button
               type="button"
               aria-label="Close menu"

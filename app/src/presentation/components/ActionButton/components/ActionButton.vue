@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import type { Button } from "../types/button-types";
 
-const props = defineProps<Button>();
+const props = withDefaults(defineProps<Button>(), {
+  as: "button",
+  style: "primary",
+  icon: undefined,
+  iconColor: undefined,
+  iconSize: undefined,
+});
 
 const buttonClasses = computed(() => ({
   [`${props.style || "primary"}`]: true,
@@ -10,11 +16,8 @@ const buttonClasses = computed(() => ({
 </script>
 
 <template>
-  <a
-    class="font-primary custom-transition flex w-max cursor-pointer items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium lg:px-6 lg:py-3 lg:text-base"
-    :class="buttonClasses"
-  >
-    <slot></slot>
+  <component :is="props.as" class="" :class="buttonClasses">
     {{ props.label }}
-  </a>
+    <component :is="props.icon" :color="props.iconColor" :size="props.iconSize" />
+  </component>
 </template>

@@ -1,7 +1,4 @@
-type MenuItem = {
-  label: string;
-  link: string;
-};
+import type { MenuItem } from "../types/header";
 
 export const MENU_ITEMS: MenuItem[] = [
   { label: "Home", link: "/" },
