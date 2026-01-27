@@ -40,7 +40,7 @@ export default [
   //        IMPORT RULES (FORA DO NUXT)
   // ==================================================
   {
-    files: [""],
+    files: [""], // TODO: adicione aqui os diretórios que usarão essas regras (nuxt já usa internamente)
     plugins: {
       import: eslintPluginImport,
     },
