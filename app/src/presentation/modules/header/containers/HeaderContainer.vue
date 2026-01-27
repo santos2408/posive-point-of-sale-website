@@ -58,27 +58,29 @@ watch(width, () => {
 </script>
 
 <template>
-  <header ref="header" class="fixed z-10 w-full bg-white transition" :style="headerStyles">
-    <div class="p-4 transition-all duration-300 sm:container xl:py-7" :style="navStyles">
+  <header ref="header" class="border-brand-neutral-200 fixed z-10 w-full border-b bg-white transition" :style="headerStyles">
+    <div class="px-6 py-5 transition-all duration-300 sm:container xl:py-7" :style="navStyles">
       <div class="flex flex-wrap items-center justify-between">
-        <a href="#" aria-label="Posive logo">
-          <ClientOnly>
-            <img src="/images/global/posive-logo.svg" data-inject-svg />
-          </ClientOnly>
-        </a>
+        <div class="flex items-center gap-14">
+          <a href="#" aria-label="Posive logo">
+            <ClientOnly>
+              <img src="/images/global/posive-logo.svg" data-inject-svg class="h-7 w-auto xl:h-9" />
+            </ClientOnly>
+          </a>
 
-        <!--============= MENU DESKTOP =============-->
-        <MenuDesktop class="hidden xl:flex xl:justify-self-end" :items="MENU_ITEMS" />
+          <!--============= MENU DESKTOP =============-->
+          <MenuDesktop class="hidden xl:flex xl:justify-self-end" :items="MENU_ITEMS" />
+        </div>
 
         <div class="flex gap-4">
           <div class="flex items-center gap-4 xl:hidden">
             <button
               type="button"
               aria-label="Close menu"
-              class="custom-transition text-brand-neutral-900 block cursor-pointer rounded-md py-1.5 xl:hidden"
+              class="custom-transition text-brand-neutral-500 block cursor-pointer rounded-md py-2 xl:hidden"
               @click="handleVisibility"
             >
-              <LucideMenu :size="32" />
+              <LucideMenu class="size-6" />
             </button>
           </div>
         </div>
