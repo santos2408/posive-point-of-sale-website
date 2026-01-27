@@ -1,0 +1,8 @@
+@theme {
+  --breakpoint-xs: 20rem;
+  --breakpoint-sm: 23.4375rem;
+  --breakpoint-md: 26.5625rem;
+  --breakpoint-lg: 48rem;
+  --breakpoint-xl: 64rem;
+  --breakpoint-2xl: 80rem;
+}

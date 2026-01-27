@@ -1,3 +1,5 @@
-.primary {
-  @apply text-brand-white bg-brand-primary-500 hover:bg-brand-primary-600;
+@layer components {
+  .primary {
+    @apply text-brand-white custom-transition bg-brand-primary-500 hover:bg-brand-primary-500/95 border-brand-primary-600 inset-shadow-brand-primary-600 brand-fill-button cursor-pointer rounded-[10px] border px-5 py-3 font-medium;
+  }
 }
