@@ -3,14 +3,15 @@ import type { Button } from "../types/button-types";
 
 const props = withDefaults(defineProps<Button>(), {
   as: "button",
-  style: "primary",
+  style: "action-button--primary",
   icon: undefined,
   iconColor: undefined,
   iconSize: undefined,
 });
 
 const buttonClasses = computed(() => ({
-  [`${props.style || "primary"}`]: true,
+  "action-button": true,
+  [props.style]: true,
   // [`${props.size || "medium"}`]: true,
 }));
 </script>

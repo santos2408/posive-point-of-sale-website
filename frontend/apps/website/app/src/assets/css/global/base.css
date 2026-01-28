@@ -25,6 +25,10 @@
     margin-bottom: 5rem;
   }
 
+  button {
+    font-family: var(--font-primary);
+  }
+
   @media screen and (min-width: 1180px) {
     .section {
       margin-bottom: 6.25rem;

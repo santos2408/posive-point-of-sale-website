@@ -74,7 +74,10 @@ watch(width, () => {
             <MenuDesktop class="hidden xl:flex xl:justify-self-end" :items="MENU_ITEMS" />
           </div>
 
-          <ActionButton label="Get Started" class="max-xl:hidden" />
+          <div class="space-x-3">
+            <ActionButton label="Get Started" :style="'action-button--outlined'" class="max-xl:hidden" />
+            <ActionButton label="Get Started" class="max-xl:hidden" />
+          </div>
         </div>
 
         <div class="flex gap-4 xl:hidden">
