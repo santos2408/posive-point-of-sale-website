@@ -59,33 +59,33 @@ watch(width, () => {
 </script>
 
 <template>
-  <header ref="header" class="border-brand-neutral-200 fixed z-10 w-full border-b bg-white transition" :style="headerStyles">
-    <div class="px-6 py-5 transition-all duration-300 sm:container xl:py-6" :style="navStyles">
+  <header ref="header" class="border-brand-neutral-200 fixed z-10 w-full border-b bg-white" :style="headerStyles">
+    <div class="container py-5 transition-all 2xl:py-6" :style="navStyles">
       <div class="flex flex-wrap items-center justify-between">
-        <div class="flex justify-between xl:w-full">
+        <div class="flex justify-between 2xl:w-full">
           <div class="flex items-center gap-14">
             <a href="#" aria-label="Posive logo">
               <ClientOnly>
-                <img src="/images/global/posive-logo.svg" data-inject-svg class="h-7 w-auto xl:h-9" />
+                <img src="/images/global/posive-logo.svg" data-inject-svg class="h-7 w-auto 2xl:h-9" />
               </ClientOnly>
             </a>
 
             <!--============= MENU DESKTOP =============-->
-            <MenuDesktop class="hidden xl:flex xl:justify-self-end" :items="MENU_ITEMS" />
+            <MenuDesktop class="hidden 2xl:flex 2xl:justify-self-end" :items="MENU_ITEMS" />
           </div>
 
           <div class="space-x-3">
-            <ActionButton label="Get Started" :style="'action-button--outlined'" class="max-xl:hidden" />
-            <ActionButton label="Get Started" class="max-xl:hidden" />
+            <ActionButton label="Login" :style="'action-button--outlined'" class="w-36 max-2xl:hidden" />
+            <ActionButton label="Get Started" class="w-36 max-2xl:hidden" />
           </div>
         </div>
 
-        <div class="flex gap-4 xl:hidden">
+        <div class="flex gap-4 2xl:hidden">
           <div class="flex items-center gap-4">
             <button
               type="button"
               aria-label="Close menu"
-              class="custom-transition text-brand-neutral-500 block cursor-pointer rounded-md py-2 xl:hidden"
+              class="custom-transition text-brand-neutral-500 block cursor-pointer rounded-md py-2 2xl:hidden"
               @click="handleVisibility"
             >
               <LucideMenu class="size-6" />
