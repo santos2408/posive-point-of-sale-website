@@ -6,7 +6,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <ul class="gap-3">
+  <ul class="gap-2">
     <li v-for="menuItem in props.items" :key="menuItem.label" class="">
       <a :href="menuItem.link" class="hover:text-brand-primary-500 custom-transition text-brand-neutral-400 inline-block px-4 py-2.5 font-medium">
         {{ menuItem.label }}

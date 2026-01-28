@@ -60,7 +60,7 @@ watch(width, () => {
 
 <template>
   <header ref="header" class="border-brand-neutral-200 fixed z-10 w-full border-b bg-white transition" :style="headerStyles">
-    <div class="px-6 py-5 transition-all duration-300 sm:container xl:py-7" :style="navStyles">
+    <div class="px-6 py-5 transition-all duration-300 sm:container xl:py-6" :style="navStyles">
       <div class="flex flex-wrap items-center justify-between">
         <div class="flex justify-between xl:w-full">
           <div class="flex items-center gap-14">
