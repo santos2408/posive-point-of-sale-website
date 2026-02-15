@@ -20,7 +20,7 @@ const headerStyles = computed(() => {
 
   return {
     backgroundColor: `rgba(255,255,255,${opacity})`,
-    boxShadow: limit ? "0px 5px 5px rgba(0,0,0,0.06)" : "",
+    boxShadow: limit ? "0px 5px 10px rgba(0,0,0,0.15)" : "",
   };
 });
 
@@ -30,8 +30,8 @@ const navStyles = computed(() => {
   const onDesktop = width.value > 1024;
 
   return {
-    paddingTop: onDesktop && activeScroll ? "16px" : "",
-    paddingBottom: onDesktop && activeScroll ? "16px" : "",
+    paddingTop: !onDesktop && activeScroll ? "8px" : "",
+    paddingBottom: !onDesktop && activeScroll ? "8px" : "",
   };
 });
 
@@ -60,7 +60,7 @@ watch(width, () => {
 
 <template>
   <header ref="header" class="border-brand-neutral-100 fixed z-10 w-full border-b bg-white" :style="headerStyles">
-    <div class="container py-5 transition-all 2xl:py-6" :style="navStyles">
+    <nav class="container py-5 transition-all duration-300 2xl:py-6" :style="navStyles">
       <div class="flex flex-wrap items-center justify-between">
         <div class="flex justify-between 2xl:w-full">
           <div class="flex items-center gap-14">
@@ -105,7 +105,7 @@ watch(width, () => {
           />
         </Transition>
       </Teleport>
-    </div>
+    </nav>
   </header>
 </template>
 

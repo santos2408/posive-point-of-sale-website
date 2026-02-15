@@ -24,7 +24,7 @@ onClickOutside(menu, () => {
 
 <template>
   <div class="menu-overlay fixed top-0 left-0 z-50 w-full">
-    <nav ref="menu" class="bg-brand-neutral-900 z-50 h-screen w-4/5 overflow-y-auto px-4 py-8">
+    <div ref="menu" class="bg-brand-neutral-900 z-50 h-screen w-4/5 overflow-y-auto px-4 py-8">
       <div class="mb-10 flex items-center justify-between">
         <a href="/">
           <ClientOnly>
@@ -87,7 +87,7 @@ onClickOutside(menu, () => {
           </a>
         </div>
       </div>
-    </nav>
+    </div>
   </div>
 </template>
 
