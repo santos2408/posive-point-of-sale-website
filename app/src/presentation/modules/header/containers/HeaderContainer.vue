@@ -57,13 +57,6 @@ watch(width, () => {
     const body = document.body;
     states.visible = false;
     body.classList.remove("overflow-hidden");
-
-    // TODO: mapear breakpoints em um objeto javascript
-    if (width.value >= 1328) {
-      console.log("desktop");
-    } else {
-      console.log("mobile");
-    }
   }
 });
 
