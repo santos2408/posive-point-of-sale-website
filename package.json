@@ -2,17 +2,17 @@
   "name": "posive-point-of-sale",
   "type": "module",
   "private": true,
-  "workspaces": ["./frontend/apps/*"],
+  "workspaces": [
+    "./frontend/*"
+  ],
   "scripts": {
-    "build:website": "npm run dev -w frontend/apps/website",
-    "dev:website": "npm run dev -w frontend/apps/website",
     "prepare": "husky"
   },
   "devDependencies": {
     "eslint": "^9.39.1",
     "git-commit-msg-linter": "^5.0.8",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.6",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.6.2"
   }
 }
