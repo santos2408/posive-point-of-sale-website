@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   vite: { plugins: [tailwindcss()] },
   css: ["@/assets/css/index.css"],
-  modules: ["@nuxt/eslint", "@nuxt/image", "@vueuse/nuxt", "nuxt-lucide-icons", "@nuxtjs/google-fonts"],
+  modules: ["@nuxt/eslint", "@nuxt/image", "@vueuse/nuxt", "nuxt-lucide-icons", "@nuxt/fonts"],
   ssr: true,
   image: { provider: "ipx" },
   nitro: {
@@ -24,10 +24,5 @@ export default defineNuxtConfig({
     middleware: "src/presentation/middleware",
     assets: "src/assets",
     plugins: "src/plugins",
-  },
-  googleFonts: {
-    families: {
-      Manrope: { wght: [400, 500, 700] },
-    },
   },
 });
