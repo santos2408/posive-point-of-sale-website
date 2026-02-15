@@ -24,7 +24,7 @@ onClickOutside(menu, () => {
 
 <template>
   <div class="menu-overlay fixed top-0 left-0 z-50 w-full">
-    <nav ref="menu" class="bg-brand-neutral-900 z-50 h-screen w-4/5 px-4 py-8">
+    <nav ref="menu" class="bg-brand-neutral-900 z-50 h-screen w-4/5 overflow-y-auto px-4 py-8">
       <div class="mb-10 flex items-center justify-between">
         <a href="/">
           <ClientOnly>
@@ -48,7 +48,11 @@ onClickOutside(menu, () => {
             idx === props.items.length - 1 ? 'border-b' : undefined,
           ]"
         >
-          <NuxtLink :to="menuItem.link" class="hover:text-brand-primary-500 block cursor-pointer py-3">
+          <NuxtLink
+            :to="menuItem.link"
+            class="hover:text-brand-primary-500 block cursor-pointer py-3"
+            @click="emit('close-menu')"
+          >
             {{ menuItem.label }}
           </NuxtLink>
         </li>
