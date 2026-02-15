@@ -52,13 +52,14 @@
   --color-brand-info-800: #183285;
   --color-brand-info-900: #0e216e;
 
-  --color-brand-neutral-100: #edf1f3;
-  --color-brand-neutral-200: #dce4e8;
-  --color-brand-neutral-300: #acb5bb;
-  --color-brand-neutral-400: #6c7278;
-  --color-brand-neutral-500: #1a1c1e;
-  --color-brand-neutral-600: #131619;
-  --color-brand-neutral-700: #0d1015;
-  --color-brand-neutral-800: #080b11;
-  --color-brand-neutral-900: #04070e;
+  --color-brand-neutral-50: #ededed;
+  --color-brand-neutral-100: #c8c8c8;
+  --color-brand-neutral-200: #aeaeae;
+  --color-brand-neutral-300: #898989;
+  --color-brand-neutral-400: #727272;
+  --color-brand-neutral-500: #4f4f4f;
+  --color-brand-neutral-600: #484848;
+  --color-brand-neutral-700: #383838;
+  --color-brand-neutral-800: #2b2b2b;
+  --color-brand-neutral-900: #212121;
 }
