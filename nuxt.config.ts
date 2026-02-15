@@ -9,7 +9,18 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   css: ["@/assets/css/index.css"],
-  modules: ["@nuxt/eslint", "@nuxt/image", "@vueuse/nuxt", "nuxt-lucide-icons", "@nuxt/fonts"],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/image",
+    "@vueuse/nuxt",
+    "nuxt-lucide-icons",
+    "@nuxt/fonts",
+    "@pinia/nuxt",
+    "@nuxt/icon",
+  ],
+  pinia: {
+    storesDirs: ["./app/src/presentation/stores/**"],
+  },
   ssr: true,
   image: { provider: "ipx" },
   nitro: {
