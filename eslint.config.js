@@ -2,16 +2,7 @@ import { defineConfig } from "eslint/config";
 import eslintPluginPrettier from "eslint-plugin-prettier";
 import websiteConfig from "./frontend/website/eslint.config.js";
 
-export default defineConfig([
-  // ================================
-  //         WEBSITE (NUXT.JS)
-  // ================================
-  ...(await websiteConfig.toConfigs()).map((config) => ({
-    ...config,
-    files: ["./frontend/website/**/*.{js,ts,vue}"],
-    ignores: ["**/public/scripts/*"],
-  })),
-
+export default withNuxt([
   // ================================
   //         GLOBAL SETTINGS
   // ================================
@@ -24,6 +15,11 @@ export default defineConfig([
       "no-console": "warn",
       "no-debugger": "error",
       "prefer-const": "warn",
+      "vue/multi-word-component-names": "off",
+    "vue/no-unused-vars": "warn",
+    "vue/no-mutating-props": "error",
+    "vue/html-self-closing": "off",
+    "no-console": "warn",
     },
   },
 ]);
