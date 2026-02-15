@@ -8,6 +8,6 @@
   }
 
   .action-button--outlined {
-    @apply text-brand-neutral-500 bg-brand-white hover:bg-brand-neutral-100 border-brand-neutral-200;
+    @apply text-brand-neutral-500 bg-brand-white border-brand-neutral-100;
   }
 }

@@ -59,7 +59,7 @@ watch(width, () => {
 </script>
 
 <template>
-  <header ref="header" class="border-brand-neutral-200 fixed z-10 w-full border-b bg-white" :style="headerStyles">
+  <header ref="header" class="border-brand-neutral-100 fixed z-10 w-full border-b bg-white" :style="headerStyles">
     <div class="container py-5 transition-all 2xl:py-6" :style="navStyles">
       <div class="flex flex-wrap items-center justify-between">
         <div class="flex justify-between 2xl:w-full">
