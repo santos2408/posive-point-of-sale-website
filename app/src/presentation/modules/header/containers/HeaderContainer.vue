@@ -4,22 +4,23 @@ import { MENU_ITEMS } from "../constants/menu-items";
 import MenuDesktop from "../components/MenuDesktop/MenuDesktop.vue";
 import MenuMobile from "@/presentation/modules/header/components/MenuMobile/MenuMobile.vue";
 import ActionButton from "@/presentation/components/ActionButton/components/ActionButton.vue";
+import { useElementStore } from "@/presentation/stores/element";
 
 // states
 const states = reactive<States>({ visible: false });
+const header = useTemplateRef("header");
 
 // composables
 const { width } = useWindowSize();
 const { y } = useWindowScroll();
+const elementStore = useElementStore();
 
 // computed properties
 const headerStyles = computed(() => {
   const scrollY = y.value;
   const limit = scrollY > 100;
-  const opacity = `${limit ? 100 : scrollY}%`;
 
   return {
-    backgroundColor: `rgba(255,255,255,${opacity})`,
     boxShadow: limit ? "0px 5px 10px rgba(0,0,0,0.15)" : "",
   };
 });
@@ -32,6 +33,8 @@ const navStyles = computed(() => {
   return {
     paddingTop: !onDesktop && activeScroll ? "8px" : "",
     paddingBottom: !onDesktop && activeScroll ? "8px" : "",
+    transition: activeScroll ? "all" : "",
+    transitionDuration: activeScroll ? "300ms" : "",
   };
 });
 
@@ -54,13 +57,24 @@ watch(width, () => {
     const body = document.body;
     states.visible = false;
     body.classList.remove("overflow-hidden");
+
+    // TODO: mapear breakpoints em um objeto javascript
+    if (width.value >= 1328) {
+      console.log("desktop");
+    } else {
+      console.log("mobile");
+    }
   }
+});
+
+onMounted(() => {
+  elementStore.setElement("header", header.value);
 });
 </script>
 
 <template>
   <header ref="header" class="border-brand-neutral-100 fixed z-10 w-full border-b bg-white" :style="headerStyles">
-    <nav class="container py-5 transition-all duration-300 2xl:py-6" :style="navStyles">
+    <nav class="container py-5 2xl:py-6" :style="navStyles">
       <div class="flex flex-wrap items-center justify-between">
         <div class="flex justify-between 2xl:w-full">
           <div class="flex items-center gap-14">
@@ -88,23 +102,25 @@ watch(width, () => {
               class="custom-transition text-brand-neutral-500 block cursor-pointer rounded-md py-2 2xl:hidden"
               @click="handleVisibility"
             >
-              <LucideMenu class="size-6" />
+              <Icon name="lucide:menu" class="text-2xl" />
             </button>
           </div>
         </div>
       </div>
 
-      <Teleport to="body">
-        <Transition name="menu-mobile-fade">
-          <MenuMobile
-            v-show="states.visible"
-            ref="menu"
-            :items="MENU_ITEMS"
-            :visible="states.visible"
-            @close-menu="handleVisibility"
-          />
-        </Transition>
-      </Teleport>
+      <ClientOnly>
+        <Teleport to="body">
+          <Transition name="menu-mobile-fade">
+            <MenuMobile
+              v-show="states.visible"
+              ref="menu"
+              :items="MENU_ITEMS"
+              :visible="states.visible"
+              @close-menu="handleVisibility"
+            />
+          </Transition>
+        </Teleport>
+      </ClientOnly>
     </nav>
   </header>
 </template>
@@ -112,13 +128,11 @@ watch(width, () => {
 <style scoped>
 .menu-mobile-fade-enter-active,
 .menu-mobile-fade-leave-active {
-  /* opacity: 1; */
   transition: transform 0.2s ease;
 }
 
 .menu-mobile-fade-enter-from,
 .menu-mobile-fade-leave-to {
   transform: translateX(-100%);
-  /* opacity: 0; */
 }
 </style>
