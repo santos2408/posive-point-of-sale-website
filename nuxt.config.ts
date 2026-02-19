@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   vite: {
+    // @ts-expect-error ignore line
     plugins: [tailwindcss()],
   },
   css: ["@/assets/css/index.css"],
