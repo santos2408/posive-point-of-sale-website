@@ -38,4 +38,10 @@ export default defineNuxtConfig({
     assets: "src/assets",
     plugins: "src/plugins",
   },
+  fonts: {
+    defaults: {
+      weights: [400, 500, 600, 700, 800],
+      styles: ["normal", "italic"],
+    },
+  },
 });
