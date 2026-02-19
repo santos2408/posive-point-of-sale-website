@@ -38,13 +38,13 @@ watch(width, () => {
       </p>
 
       <h1
-        class="text-brand-neutral-900 mx-auto mb-4 max-w-85 text-3xl font-extrabold md:max-w-lg lg:max-w-xl lg:text-4xl lg:leading-snug xl:max-w-[827px] xl:text-5xl 2xl:max-w-[920px] 2xl:text-6xl"
+        class="text-brand-neutral-900 mx-auto mb-4 max-w-85 text-3xl font-extrabold md:max-w-lg lg:max-w-xl lg:text-4xl lg:leading-snug xl:max-w-206.75 xl:text-5xl 2xl:max-w-230 2xl:text-6xl"
       >
         Empower Your Business Growth with Our Point of Sale
       </h1>
 
       <p
-        class="text-brand-neutral-400 mx-auto mb-6 max-w-md font-medium lg:mb-8 lg:max-w-2xl xl:max-w-[640px] 2xl:max-w-[720px] 2xl:text-lg"
+        class="text-brand-neutral-400 mx-auto mb-6 max-w-md font-medium lg:mb-8 lg:max-w-2xl xl:max-w-160 2xl:max-w-180 2xl:text-lg"
       >
         From managing inventory to tracking sales performance, our platform provides you with the tools you need to
         succeed in today's competitive market
@@ -63,7 +63,7 @@ watch(width, () => {
 
     <div class="relative">
       <picture>
-        <source media="(min-width: 1280px)" srcset="/images/hero/hero-background.png" />
+        <source media="(min-width: 1260px)" srcset="/images/hero/hero-background-1260w.png" />
         <source media="(min-width: 1180px)" srcset="/images/hero/hero-background-1180w.png" />
         <source media="(min-width: 1024px)" srcset="/images/hero/hero-background-tablet.png" />
 
@@ -71,7 +71,7 @@ watch(width, () => {
           src="/images/hero/hero-background-mobile.png"
           alt=""
           aria-hidden="true"
-          class="w-full object-center max-xl:max-h-150"
+          class="w-full object-cover object-center md:max-h-145 xl:max-h-200"
         />
       </picture>
 
@@ -81,7 +81,7 @@ watch(width, () => {
           sizes="(max-width:480px) 350px, (max-width:768px) 864px"
           src="/images/hero/hero-ipad-device.png"
           alt="Painel de vendas da aplicação Posive"
-          class="w-full max-w-164 px-6 lg:px-0 xl:max-w-[864px]"
+          class="w-full max-w-164 px-6 lg:px-0 xl:max-w-216"
         />
       </div>
     </div>
