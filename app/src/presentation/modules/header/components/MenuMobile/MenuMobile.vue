@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { X } from "lucide-vue-next";
 import type { MenuItem } from "../../types/header";
 import { Socials } from "@/presentation/components/types/enums";
 import IconSocial from "@/presentation/components/Icons/IconSocial.vue";

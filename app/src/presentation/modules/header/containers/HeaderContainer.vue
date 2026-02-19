@@ -92,7 +92,7 @@ onMounted(() => {
             <button
               type="button"
               aria-label="Close menu"
-              class="custom-transition text-brand-neutral-500 block cursor-pointer rounded-md py-2 2xl:hidden"
+              class="custom-transition text-brand-neutral-500 flex cursor-pointer rounded-md py-2 2xl:hidden"
               @click="handleVisibility"
             >
               <Icon name="lucide:menu" class="text-2xl" />
