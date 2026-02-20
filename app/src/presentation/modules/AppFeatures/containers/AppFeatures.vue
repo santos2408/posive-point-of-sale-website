@@ -4,13 +4,13 @@ const items = [
     title: "Platform for a Single Store",
     description:
       "A single store POS system is typically simpler, focusing on efficiency and ease of use. It is designed to streamline daily operations.",
-    image: "feature-01.png",
+    image: "feature-01.avif",
   },
   {
     title: "Platform for a Multi Store",
     description:
       "POS systems for multi-store operations must handle more complex tasks and provide centralized control over multiple locations.",
-    image: "feature-02.png",
+    image: "feature-02.avif",
   },
 ];
 </script>
@@ -34,7 +34,7 @@ const items = [
         class="group relative flex min-h-125 flex-col items-center justify-end overflow-hidden rounded-2xl p-6 xl:p-8"
       >
         <img
-          :src="`/images/app-features/${item.image}`"
+          :src="`/images/app-features/optimized/${item.image}`"
           alt=""
           class="absolute top-2/4 left-2/4 -z-10 h-full w-full -translate-x-2/4 -translate-y-2/4 object-cover object-center transition-all duration-300 group-hover:scale-[1.05]"
         />
