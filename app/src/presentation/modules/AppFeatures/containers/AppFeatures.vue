@@ -16,7 +16,7 @@ const items = [
 </script>
 
 <template>
-  <section id="features" class="3xl:py-28 container py-20">
+  <section id="features" class="container py-20 2xl:py-28">
     <div class="mb-12 space-y-4 text-center xl:mb-16">
       <h2 class="mx-auto max-w-155 text-3xl leading-snug font-bold lg:text-4xl xl:max-w-215 xl:text-6xl">
         The POS system that fits your businesess
