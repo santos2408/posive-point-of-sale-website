@@ -1,0 +1,5 @@
+@layer components {
+  .how-it-works-inset-shadow {
+    box-shadow: inset 0px -4px 10px var(--color-brand-primary-300);
+  }
+}
